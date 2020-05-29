@@ -33,7 +33,8 @@ export class BlocklyFlaskFrontendStack extends cdk.Stack {
             publicReadAccess: true,
             websiteIndexDocument: "index.html",
             serverAccessLogsBucket: log_bucket,
-            serverAccessLogsPrefix: "static-s3/"
+            serverAccessLogsPrefix: "static-s3/",
+            websiteErrorDocument: "index.html"
         });
 
         let cdn_cert = Certificate.fromCertificateArn(this, "CloudfrontCert", props.cdnCertArn);
